@@ -104,7 +104,8 @@
     .logo {
       height: 250px;
       width: 250px;
-      padding: 68px;
+      padding-top: 70px;
+      padding-bottom: 25px;
       display: block;
       margin-left: auto;
       margin-right: auto;
