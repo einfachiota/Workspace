@@ -9,8 +9,6 @@
     margin-top: 15px;
     display: block;
     overflow: visible!important;
-    padding-top: 15px;
-    padding-bottom: 15px;
     margin-right: auto;
     margin-left: auto;
     background-color: #f8f8f8;
@@ -19,16 +17,23 @@
 }
 
 .NavbarBrand {
-    height: 50px;
-    padding: 15px 15px;
     font-size: 18px;
-    line-height: 20px;
+    line-height: 50px;
+    margin-left: 15px;
     font-weight: bold;
     color: #777;
+    text-decoration: none;
 }
 
 .loginform {
     width: 350px;
+}
+.signupform {
+    width: 350px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 150px;
+
 }
 
 .label {
@@ -47,6 +52,15 @@
     width: 350px;
 
 }
+
+.form-group-signup {
+    border: 1px solid #cfcece;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    width: 100%;
+}
 .LoginButton {
     border: 1px solid #cfcece;
     background-color: transparent;
@@ -56,19 +70,36 @@
     cursor: pointer;
     font-size: 18px;
     color: #777;
-    width: 350px;
+    width: 100%;
+}
+
+.navButtons {
+    text-align: right;
+    list-style: none;
+    color: #777;
+    margin-top: -50px;
+    line-height: 50px;
+}
+.navButtons a {
+    border: none;
+    margin-right: 15px;
+}
+.navButtons a:hover {
+    background-color: gray;
+}
+.navButtons a:active {
+    background-color: gray;
 }
 @media all and (min-width: 480px) {
   
     .loginform {
         margin: 0 auto;
-        
     }
   
     .logo {
       height: 250px;
       width: 250px;
-      padding: 70px;
+      padding: 68px;
       display: block;
       margin-left: auto;
       margin-right: auto;

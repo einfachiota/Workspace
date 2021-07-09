@@ -1,20 +1,32 @@
-import React from 'react'
-import Logo from './assets/NK.svg'
-import Loginform from './components/loginform';
-import Navbar from './components/navbar';
+  
+import React, { Component } from 'react'
+import PrivateRoute from './Routes/PrivateRoute'
+import PublicRoute from './Routes/PublicRoute'
+import {
+  BrowserRouter as Router,
+  Switch
+} from "react-router-dom"
 
-import './css/login.css'
+import Login from './Screens/Login'
+import Entry from './Screens/Entry'
+import Register from './Screens/Register'
 
-function App() {
-  return (
-  <div className="container"> 
-    <div className="Login">
-    <Navbar />
-       <img src={Logo} alt="logo" className="logo"></img>
-       <Loginform />
-    </div>
-  </div>
-  );
+
+class App extends Component {
+
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <PublicRoute restricted={false} component={Login} path="/login" exact />
+          <PublicRoute restricted={false} component={Register} path="/signup" exact />
+
+          <PrivateRoute restricted={false} component={Entry} path="/" exact />
+ 
+        </Switch>
+      </Router>
+    );
+  }
 }
 
 export default App;
