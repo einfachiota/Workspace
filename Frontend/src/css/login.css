@@ -1,8 +1,6 @@
 .container {  
     margin-right: auto;
     margin-left: auto;
-    width: 68vw;
-    max-width: 1170px;
 }
 .NavBar {
     margin-top: 15px;
@@ -13,6 +11,8 @@
     background-color: #f8f8f8;
     border-radius: 4px;
     border: 1px solid #e7e7e7;
+    width: 68vw;
+    max-width: 1170px;
 }
 
 .NavbarBrand {
@@ -25,8 +25,11 @@
 }
 
 .loginform {
+    display: block;
+    overflow: visible!important;
     margin-right: auto;
     margin-left: auto;
+    max-width: 350px;
 }
 .signupform {
     width: 350px;
@@ -79,7 +82,6 @@
 .navButtons {
     text-align: right;
     list-style: none;
-    color: #777;
     margin-top: -50px;
     line-height: 50px;
 
@@ -87,12 +89,14 @@
 .navButtons a {
     border: none;
     margin-right: 15px;
+    color: #777;
+    text-decoration: none;
 }
 .navButtons a:hover {
-    background-color: gray;
+    background-color: #e7e7e7;
 }
 .navButtons a:active {
-    background-color: gray;
+    background-color: #e7e7e7;
 }
 @media all and (min-width: 480px) {
   

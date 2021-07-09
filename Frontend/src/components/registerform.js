@@ -34,6 +34,7 @@ class Registerform extends Component {
               type='text'
             />
           </label>
+          <br />
           <label className='label'>
             Email
             <br />

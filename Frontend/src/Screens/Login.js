@@ -9,11 +9,11 @@ class Login extends Component {
   render() {
     return (
       <div className='container'>
-        <div className='Login'>
+        
           <Navbar />
           <img src={Logo} alt='logo' className='logo'></img>
           <Loginform />
-        </div>
+  
       </div>
     )
   }
