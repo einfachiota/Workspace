@@ -1,0 +1,7 @@
+.sidebar {
+    background-color: rgb(147, 179, 179);
+    width: 240px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}

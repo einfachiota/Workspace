@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { logout, isLogin } from '../utils'
 
+import Sidebar from '../components/sidebar'
+
 class Entry extends Component {
   constructor(props) {
     super(props)
@@ -21,6 +23,7 @@ class Entry extends Component {
   render() {
     return (
       <div>
+      <p className="logoutbutton">
         {this.state.isLogin ? (
           <p onClick={() => this.handleLogout()}>Logout</p>
         ) : (
@@ -28,6 +31,8 @@ class Entry extends Component {
             Logout
           </Link>
         )}
+        </p>
+        <Sidebar />
       </div>
     )
   }
