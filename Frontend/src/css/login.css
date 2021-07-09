@@ -72,6 +72,9 @@
     color: #777;
     width: 350px;
 }
+.LoginButton:hover {
+    background-color: rgb(230, 230, 230);
+}
 
 .navButtons {
     text-align: right;
