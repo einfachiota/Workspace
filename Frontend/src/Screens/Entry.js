@@ -4,31 +4,33 @@ import { logout, isLogin } from '../utils'
 
 class Entry extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
-        isLogin: isLogin()
+      isLogin: isLogin(),
     }
-}
+  }
 
-handleLogout = () => {
-    logout();
+  handleLogout = () => {
+    logout()
     this.props.history.push('/login')
     this.setState({
-        isLogin: false
+      isLogin: false,
     })
-}
-    render() {
-      return (
+  }
+  render() {
+    return (
       <div>
-
-{this.state.isLogin ?
-                                    <p onClick={() => this.handleLogout()}>Logout</p>
-                                    : <Link to="/login" onClick={() => this.handleLogout()}>Logout</Link>
-                                }
-      </div>
+        {this.state.isLogin ? (
+          <p onClick={() => this.handleLogout()}>Logout</p>
+        ) : (
+          <Link to='/login' onClick={() => this.handleLogout()}>
+            Logout
+          </Link>
         )}
-
+      </div>
+    )
+  }
 }
 
-export default Entry
+export default withRouter(Entry)
