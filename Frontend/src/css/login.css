@@ -4,7 +4,6 @@
     width: 68vw;
     max-width: 1170px;
 }
-
 .NavBar {
     margin-top: 15px;
     display: block;
@@ -26,7 +25,8 @@
 }
 
 .loginform {
-    width: 350px;
+    margin-right: auto;
+    margin-left: auto;
 }
 .signupform {
     width: 350px;
@@ -37,8 +37,6 @@
 }
 
 .label {
-    display: inline-block;
-    max-width: 100%;
     font-weight: 700;
     margin-bottom: 15px;
 }
@@ -46,6 +44,7 @@
 .form-group-login {
     border: 1px solid #cfcece;
     padding: 10px 16px;
+    margin-bottom: 15px;
     font-size: 18px;
     line-height: 1.3333333;
     border-radius: 6px;
@@ -56,10 +55,11 @@
 .form-group-signup {
     border: 1px solid #cfcece;
     padding: 10px 16px;
+    margin-bottom: 15px;
     font-size: 18px;
     line-height: 1.3333333;
     border-radius: 6px;
-    width: 100%;
+    width: 350px;
 }
 .LoginButton {
     border: 1px solid #cfcece;
@@ -70,7 +70,7 @@
     cursor: pointer;
     font-size: 18px;
     color: #777;
-    width: 100%;
+    width: 350px;
 }
 
 .navButtons {
@@ -79,6 +79,7 @@
     color: #777;
     margin-top: -50px;
     line-height: 50px;
+
 }
 .navButtons a {
     border: none;
@@ -92,9 +93,6 @@
 }
 @media all and (min-width: 480px) {
   
-    .loginform {
-        margin: 0 auto;
-    }
   
     .logo {
       height: 250px;
@@ -104,5 +102,6 @@
       margin-left: auto;
       margin-right: auto;
     }
+    
   }
 
