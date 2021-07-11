@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import '../css/login.css'
 
@@ -8,8 +9,8 @@ class Navbar extends Component {
             <div className="NavBar">
               <a href="/" className="NavbarBrand">Workspace</a>
               <li className="navButtons">
-              <a href="/signup">Signup</a>
-              <a href="/login">Login</a>
+              <Link to='/signup'>Signup</Link>
+              <Link to='/login'>Login</Link>
               </li>
             </div>
         )

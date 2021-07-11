@@ -1,3 +1,13 @@
+:root {
+   --secondary: #ce4c4c; 
+   --background: #272727;
+   --content-background: #a3a3a3;
+
+   --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   --transition: all ease-in-out 300ms;
+   --sidebar-width: 240px;
+}
+
 body {
   margin: 0;
   padding: 0;

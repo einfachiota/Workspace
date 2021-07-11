@@ -98,18 +98,13 @@
 .navButtons a:active {
     background-color: #e7e7e7;
 }
-.logoutbutton {
-    text-align: right;
-    margin-right: 25px;
-    cursor: pointer;
-}
 @media all and (min-width: 480px) {
   
   
     .logo {
       height: 250px;
       width: 250px;
-      padding-top: 70px;
+      padding-top: 60px;
       padding-bottom: 25px;
       display: block;
       margin-left: auto;
