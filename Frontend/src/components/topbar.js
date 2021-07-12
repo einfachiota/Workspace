@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { logout, isLogin } from '../utils'
+import { openNav, closeNav } from './handler'
 
 import '../css/topbar.css'
 import '../css/sidebar.css'
@@ -25,20 +26,18 @@ class Topbar extends Component {
     }
 
 
-openNav = () => {
-    document.getElementById("mySidebar").style.width = "var(--sidebar-width)";
-    document.getElementById("topbar").style.marginLeft = "var(--sidebar-width)";
+toggleOpen = () => {
+    openNav()
     this.setState({nav: true})
 }
 
-closeNav = () => {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("topbar").style.marginLeft = "0";
+toggleClose = () => {
+    closeNav()
     this.setState({ nav: false })
 }
 
 toggleNav = () => {
-    this.state.nav ? this.closeNav() : this.openNav();
+    this.state.nav ? this.toggleClose() : this.toggleOpen();
 }
 
     render() {
