@@ -8,12 +8,35 @@
     float: right;
     margin-right: 25px;
     cursor: pointer;
-   
+    color: rgb(87, 87, 87); 
 }
+.logoutbutton:hover {
+    color: black;
+}
+
 .sidebarbutton {
     margin-left: 25px;
     cursor: pointer;
     font-size: larger;
     font-weight: bolder;
     position: absolute;
+    color: rgb(87, 87, 87); 
+}
+.sidebarbutton:hover {
+    color: black;
+}
+
+.topNavigation {
+    list-style: none;
+    text-decoration: none;
+    margin-left: 100px;
+    position: absolute;
+}
+.topNavigationItem {
+    padding-right: 20px;
+    text-decoration: none;
+    color: rgb(87, 87, 87);
+}
+.topNavigationItem:hover {
+    color: black;
 }

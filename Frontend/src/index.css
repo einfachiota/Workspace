@@ -30,3 +30,7 @@ input.form-control {
 input[type=file] {
   width: 100%;
 }
+.contentpage {
+  overflow-x: hidden;
+  margin-left: var(--sidebar-width)
+}

@@ -10,6 +10,7 @@ import {
 import Login from './Screens/Login'
 import Entry from './Screens/Entry'
 import Register from './Screens/Register'
+import Coworker from './Screens/coworker'
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
           <PublicRoute restricted={false} component={Register} path="/signup" exact />
 
           <PrivateRoute restricted={false} component={Entry} path="/" exact />
+          <PrivateRoute restricted={false} component={Coworker} path="/coworker" exact />
  
         </Switch>
       </Router>

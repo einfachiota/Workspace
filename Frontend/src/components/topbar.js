@@ -47,6 +47,14 @@ toggleNav = () => {
                 <div className="sidebarbutton" onClick={this.toggleNav}>
                     &#9776;
                 </div>
+                
+                <div className="topNavigation">
+                   <li>
+                    <Link to='/coworker' className="topNavigationItem">co-worker</Link>
+                    <Link to='/login' className="topNavigationItem">Login</Link>
+                  </li>
+                </div>
+
                 <div className="logoutbutton">
                     {this.state.isLogin ? (
                         <div onClick={() => this.handleLogout()}>Logout</div>
