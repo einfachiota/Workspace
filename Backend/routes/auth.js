@@ -108,14 +108,14 @@ router.get("/employees", (req, res, next) => {
   });
 
   router.post('/login', (req, res) => {
-    const  name  =  req.body.name;
+    const  email  =  req.body.email;
     const  password  =  req.body.password;
-    const  findUserByName  = (name, cb) => {
-      return  db.get(`SELECT * FROM Employees WHERE name = ?`,[name], (err, row) => {
+    const  findUserByEmail  = (email, cb) => {
+      return  db.get(`SELECT * FROM Employees WHERE email = ?`,[email], (err, row) => {
               cb(err, row)
       });
   }
-    findUserByName(name, (err, user)=>{
+    findUserByEmail(email, (err, user)=>{
         if (err){
           res.json({"answer":"Server error!"});
           res.status(500)

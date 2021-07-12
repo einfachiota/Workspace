@@ -11,7 +11,7 @@ class Loginform extends Component {
   constructor() {
     super();
     this.state = {
-        name: "",
+        email: "",
         password: "",
         status: "Submit",
         answerOk: "Success",
@@ -30,8 +30,8 @@ class Loginform extends Component {
                   <input
                     className="form-group-login"
                     onChange={this.handleChange.bind(this)}
-                    id="name"
-                    value={this.state.name}
+                    id="email"
+                    value={this.state.email}
                     type='text'
                     required
 
@@ -63,8 +63,8 @@ class Loginform extends Component {
 
     handleChange(event) {
       const field = event.target.id;
-      if (field === "name") {
-          this.setState({ name: event.target.value });
+      if (field === "email") {
+          this.setState({ email: event.target.value });
       } else if (field === "password") {
           this.setState({ password: event.target.value });
       }
@@ -83,14 +83,14 @@ class Loginform extends Component {
         method: "POST",
         url: `${API_ENDPOINT}/api/login`,
         headers: { 'Content-Type': 'application/json' },
-        data: { name: this.state.name, password: this.state.password}
+        data: { email: this.state.email, password: this.state.password}
         
     }).then((response, props) => {
         
         console.log(response);
         if (response.data.answer === this.state.answerOk) {
             
-            this.setState({ name: "", password: "", status: "Logged in" })
+            this.setState({ email: "", password: "", status: "Logged in" })
             this.handleLogin()
             console.log("Login Success");
 
@@ -110,10 +110,10 @@ class Loginform extends Component {
         
         } else if (response.data.answer === this.state.answerDenied) {
             this.setState({ password: "", status: "Logging in" });
-            this.setState({ errorMessage: "Wrong Username or Password" });
+            this.setState({ errorMessage: "Wrong Email or Password" });
             this.setState({ status: "Submit" });
             this.handleShow()
-            console.log("Wrong Username or Password");
+            console.log("Wrong Email or Password");
 
         }
     });
