@@ -6,9 +6,9 @@ class Coworker extends Component {
     render() {
         return(
 
-              <div className="contentpage">
-                  coworker
-              </div>
+            <div id="contentpage">
+            Home
+            </div>
          
         )
     }

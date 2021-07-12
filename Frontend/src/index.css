@@ -30,7 +30,10 @@ input.form-control {
 input[type=file] {
   width: 100%;
 }
-.contentpage {
+#contentpage {
   overflow-x: hidden;
-  margin-left: var(--sidebar-width)
+  margin-left: var(--sidebar-width);
+  background-color: rgb(223, 205, 240);
+  height: 100%;
+  transition: 0.5s;
 }

@@ -10,6 +10,9 @@ class Entry extends Component {
       <div>
         <Topbar />
         <Sidebar />
+        <div id="contentpage">
+           Entry
+        </div>
       </div>
     )
   }
