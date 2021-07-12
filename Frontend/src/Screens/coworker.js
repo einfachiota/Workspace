@@ -7,7 +7,7 @@ class Coworker extends Component {
         return(
 
             <div id="contentpage">
-            Home
+            Coworker
             </div>
          
         )
