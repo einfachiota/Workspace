@@ -2,8 +2,7 @@ import React from "react";
 import PrivateRoute from './Routes/PrivateRoute'
 import PublicRoute from './Routes/PublicRoute'
 import {
-  BrowserRouter as Router,
-  Switch, Route
+  Switch
 } from "react-router-dom"
 
 import Entry from './Screens/Entry'
