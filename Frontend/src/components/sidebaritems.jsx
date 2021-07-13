@@ -11,10 +11,6 @@ const SidebarItems = [
         name: "Signup",
         route: '/signup'
     },
-    {
-        name: "Coworker",
-        route: '/coworker'
-    },
 ];
 
 export default SidebarItems;
