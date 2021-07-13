@@ -16,7 +16,7 @@ function Navbar() {
                      <Link to={item.route}> 
 
                         <div key={item.name}>
-                            <div>{item.name}</div>
+                            <div>{[item.icon, item.name]}</div>
                         </div>
 
                      </Link>
