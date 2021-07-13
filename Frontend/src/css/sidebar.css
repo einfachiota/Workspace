@@ -13,6 +13,10 @@
   color: aliceblue;
 }
 
+.sidebarMain {
+  text-transform: uppercase;
+}
+
 .sidebar a {
     display: flex;
     flex: 1 1;

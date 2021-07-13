@@ -2,6 +2,9 @@
 
 const SidebarItems = [
     {
+        _children: ['Main']
+    },
+    {
         name: "Dashboard",
         route: '/',
         //icon: <GrAdd />
