@@ -40,7 +40,7 @@ render() {
     return users.length > 0
       ? (
         <div id="contentpage">
-        <table className="table" id="tblData">
+        <table id="tblData">
           <thead>
             <tr>
               <th style={{ borderTopLeftRadius: "4px" }}>id</th>
