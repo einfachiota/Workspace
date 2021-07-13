@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 import '../css/login.css'
 
-class Coworker extends Component {
-    render() {
+function Coworker(props) {
+
         return(
 
             <div id="contentpage">
@@ -11,7 +11,6 @@ class Coworker extends Component {
             </div>
          
         )
-    }
 }
 
 export default Coworker
