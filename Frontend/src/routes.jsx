@@ -12,9 +12,7 @@ import NotFound from "./Screens/notfound";
 
 function Routes() {
     return (
-        <Router >
-        <Route render={(props)=>(
-            //Layout and sidebar can now receive props
+
       
         <Switch>
 
@@ -25,8 +23,7 @@ function Routes() {
  
         </Switch>
      
-            )}/>
-      </Router>
+  
     )
 }
 

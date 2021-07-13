@@ -5,14 +5,14 @@ import Topbar from './components/topbar';
 
 function Layout(props) {
     return (
-        <div>
-        <Sidebar/>
+
             <div>
+                <Sidebar/>
                 <Topbar />
                 <Routes />
                
             </div>
-        </div>
+    
     );
 }
 
