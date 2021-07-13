@@ -1,6 +1,6 @@
 :root {
-   --secondary: #ce4c4c; 
-   --background: #272727;
+   --secondary: #3c4b64; 
+   --background: #dee1e6;
    --content-background: #a3a3a3;
 
    --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -37,4 +37,5 @@ input[type=file] {
   height: 100%;
   transition: 0.5s;
   padding: 25px;
+  background-color: var(--background);
 }
