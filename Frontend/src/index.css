@@ -34,7 +34,7 @@ input[type=file] {
   overflow-x: hidden;
   float: left;
   margin-left: var(--sidebar-width);
-  background-color: rgb(223, 205, 240);
   height: 100%;
   transition: 0.5s;
+  padding: 25px;
 }

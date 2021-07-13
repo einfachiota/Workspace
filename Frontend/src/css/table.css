@@ -1,0 +1,11 @@
+.table {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    margin-bottom: 1.5rem;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-radius: .25rem;
+    border: 1px solid #d8dbe0;
+}
