@@ -17,7 +17,7 @@ function Navbar() {
 
                         <div key={item.name}>
                             <div className="sidebarMain">{item._children}</div>
-                            <div>{[item.icon, item.name]}</div>
+                            <div className="sidebarItem">{[item.icon, item.name]}</div>
                         </div>
 
                      </Link>

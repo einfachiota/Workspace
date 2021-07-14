@@ -12,12 +12,7 @@
   padding-top: 110px;
   color: aliceblue;
 }
-
-.sidebarMain {
-  text-transform: uppercase;
-}
-
-.sidebar a {
+.sidebarItem {
     display: flex;
     flex: 1 1;
     align-items: center;
@@ -26,10 +21,23 @@
     white-space: nowrap;
     color: #f1f1f1;
 }
-
-.sidebar a:hover {
+.sidebar a {
+  text-decoration: none;
+}
+.sidebarItem:hover {
   background-color: hsla(0,0%,100%,.05);;
   transition: .5s, color .5s;
+}
+.sidebarMain {
+    display: flex;
+    text-transform: uppercase;
+    flex: 1 1;
+    font-size: 11.2px;
+    align-items: center;
+    padding: .8rem 3rem;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #f1f1f1;
 }
 
 .sidebar .closebtn {
