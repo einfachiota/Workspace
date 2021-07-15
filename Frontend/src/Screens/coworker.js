@@ -40,6 +40,7 @@ render() {
     return users.length > 0
       ? (
         <div id="contentpage">
+        <div className="userstable">
         <table id="tblData">
           <thead>
             <tr>
@@ -53,6 +54,7 @@ render() {
             {this.renderTableRows()}
           </tbody>
         </table>
+        </div>
         </div>
       ) : (
         <div>

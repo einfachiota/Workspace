@@ -1,9 +1,7 @@
 //import { GrAdd, BsCollection } from "../assets/icons";
 
 const SidebarItems = [
-    {
-        _children: ['Main']
-    },
+
     {
         name: "Dashboard",
         route: '/',

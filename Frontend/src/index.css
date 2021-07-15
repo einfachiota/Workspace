@@ -32,10 +32,10 @@ input[type=file] {
 }
 #contentpage {
   overflow-x: hidden;
-  float: left;
   margin-left: var(--sidebar-width);
   height: 100%;
   transition: 0.5s;
   padding: 25px;
+  height: calc(100vh - 80px);
   background-color: var(--background);
 }
