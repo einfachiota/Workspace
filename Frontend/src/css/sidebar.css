@@ -28,7 +28,7 @@
   background-color: hsla(0,0%,100%,.05);;
   transition: .5s, color .5s;
 }
-.sidebarMain {
+.sidebarTitle {
     display: flex;
     text-transform: uppercase;
     flex: 1 1;

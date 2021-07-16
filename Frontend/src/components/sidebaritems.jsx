@@ -1,6 +1,6 @@
 //import { GrAdd, BsCollection } from "../assets/icons";
 
-const SidebarItems = [
+const SidebarItemsMain = [
 
     {
         name: "Dashboard",
@@ -17,4 +17,4 @@ const SidebarItems = [
     },
 ];
 
-export default SidebarItems;
+export default SidebarItemsMain;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import SidebarItems from './sidebaritems'
+import SidebarItemsMain from './sidebaritems'
 import '../css/sidebar.css'
 
 
@@ -10,8 +10,10 @@ function Navbar() {
         return(
 
             <div id="mySidebar" className="sidebar">
+            <div className="sidebarTitle">Main</div>
+            <br />
                 {
-                    SidebarItems.map(item=> (
+                    SidebarItemsMain.map(item=> (
                      
                      <Link to={item.route}> 
 
