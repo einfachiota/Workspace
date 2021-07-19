@@ -1,6 +1,6 @@
 //import { GrAdd, BsCollection } from "../assets/icons";
 
-const SidebarItemsMain = [
+export const SidebarItemsMain = [
 
     {
         name: "Dashboard",
@@ -9,4 +9,11 @@ const SidebarItemsMain = [
     },
 ];
 
+export const SidebarItemsResources = [
+    {
+        name: "GitHub",
+        href: '/github',
+        //icon: <GrAdd />
+    },
+]
 export default SidebarItemsMain;
