@@ -7,14 +7,6 @@ const SidebarItemsMain = [
         route: '/',
         //icon: <GrAdd />
     },
-    {
-        name: "Login",
-        route: '/login'
-    },
-    {
-        name: "Signup",
-        route: '/signup'
-    },
 ];
 
 export default SidebarItemsMain;

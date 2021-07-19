@@ -5,7 +5,7 @@
   }
   
   #tblData td, #tblData th {
-    border: 1px solid #d8dbe0;
+    border-bottom: 1px solid rgb(207, 207, 207);
     padding: 8px;
   }
   
@@ -20,7 +20,7 @@
  
   }
   .userstable {
-    background-color: aliceblue;
+    background-color: white;
     padding: 10px;
     border-radius: 6px;
   }

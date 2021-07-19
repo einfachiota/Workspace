@@ -43,12 +43,11 @@ render() {
         <div className="userstable">
         <table id="tblData">
           <thead>
-            <tr>
-              <th style={{ borderTopLeftRadius: "4px" }}>id</th>
-              <th>Name</th>
+           
+              <th style={{ borderTopLeftRadius: "4px" }}>Name</th>
               <th>email</th>
               <th style={{ borderTopRightRadius: "4px" }}></th>
-            </tr>
+            
           </thead>
           <tbody>
             {this.renderTableRows()}
@@ -74,7 +73,6 @@ renderTableRows = () => {
     return this.state.users.map(user => {
       return (
         <tr key={user.id}>
-          <td>{user.id}</td>
           <td>{user.name}</td>
           <td>{user.email}</td>
           <td className="delButton" onClick={() => this.deleteTableRow(user.id)}>&#10005;</td>

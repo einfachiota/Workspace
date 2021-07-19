@@ -1,8 +1,9 @@
 .topbar {
-    background-color: #e7e7e7;
+    background-color: #fcfafa;
     line-height: 30px;
     overflow-x: hidden;
-    margin-left: var(--sidebar-width)
+    margin-left: var(--sidebar-width);
+    border-bottom: 1px solid rgb(207, 207, 207);
 }
 .logoutbutton {
     float: right;
