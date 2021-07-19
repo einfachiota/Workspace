@@ -36,6 +36,6 @@ input[type=file] {
   height: 100%;
   transition: 0.5s;
   padding: 25px;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 81px);
   background-color: var(--background);
 }
