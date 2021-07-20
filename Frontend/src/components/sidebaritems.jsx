@@ -1,4 +1,4 @@
-import { GithubIcon, AiOutlineDashboard } from "../assets/icons";
+import { GithubIcon, AiOutlineDashboard, MeetIcon, TeamNoes } from "../assets/icons";
 
 export const SidebarItemsMain = [
 
@@ -6,6 +6,16 @@ export const SidebarItemsMain = [
         name: "Dashboard",
         route: '/',
         icon: <AiOutlineDashboard />
+    },
+    {
+        name: "Meetings",
+        route: '/meetings',
+        icon: <MeetIcon />
+    },
+    {
+        name: "Teamnotes",
+        route: '/notes',
+        icon: <TeamNoes />
     },
 ];
 

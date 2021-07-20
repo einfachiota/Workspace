@@ -77,7 +77,7 @@ export const GithubIcon = ({ color, size, title, className }) => {
             stroke="currentColor"
             fill="currentColor"
             strokeWidth="0"
-            viewBox="10 50 600 500"
+            viewBox="0 50 600 500"
             xmlns="http://www.w3.org/2000/svg"
             height={size ? size : "20px"}
             width={size ? size : "20px"}
@@ -116,4 +116,55 @@ export const AiOutlineDashboard = ({ color, size, title, className }) => {
         </svg>
     );
 };
+
+export const MeetIcon = ({ color, size, title, className }) => {
+    return (
+        <svg
+            stroke="currentColor"
+            fill="currentColor"
+            strokeWidth="0"
+            viewBox="0 2 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            height={size ? size : "19px"}
+            width={size ? size : "19px"}
+            style={{ color }}
+            className={className ? className : 'ListIcon'}
+        >
+            { title ? <title>{title}</title> : null}
+            <path
+                stroke="currentColor"
+                strokeWidth="0"
+                d="M12 11a5 5 0 0 1 5 5v6H7v-6a5 5 0 0 1 5-5zm-6.712 3.006a6.983 6.983 0 0 0-.28 1.65L5 16v6H2v-4.5a3.5 3.5 0 0 1 3.119-3.48l.17-.014zm13.424 0A3.501 3.501 0 0 1 22 17.5V22h-3v-6c0-.693-.1-1.362-.288-1.994zM5.5 8a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm13 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM12 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"
+            ></path>
+        </svg>
+    );
+};
+
+export const TeamNoes = ({ color, size, title, className }) => {
+    return (
+        <svg
+            stroke="currentColor"
+            fill="currentColor"
+            strokeWidth="0"
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+            height={size ? size : "19px"}
+            width={size ? size : "19px"}
+            style={{ color }}
+            className={className ? className : 'ListIcon'}
+        >
+            { title ? <title>{title}</title> : null}
+            <path
+                stroke="currentColor"
+                strokeWidth="0"
+                d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"
+            ></path>
+            <path
+                stroke="currentColor"
+                strokeWidth="0"
+                d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z"            ></path>
+        </svg>
+    );
+};
+
 

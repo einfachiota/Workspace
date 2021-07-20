@@ -8,6 +8,8 @@ import {
 import Entry from './Screens/Entry'
 import Coworker from './Screens/coworker'
 import NotFound from "./Screens/notfound";
+import Meetings from "./Screens/Meetings";
+import Teamnotes from "./Screens/Teamnotes";
 
 function Routes() {
     return (
@@ -16,7 +18,9 @@ function Routes() {
         <Switch>
 
           <PrivateRoute restricted={false} component={Entry} path="/" exact />
-          <PrivateRoute restricted={false} component={Coworker} path="/coworker" exact />
+          <PrivateRoute restricted={false} component={Coworker} path="/members" exact />
+          <PrivateRoute restricted={false} component={Meetings} path="/meetings" exact />
+          <PrivateRoute restricted={false} component={Teamnotes} path="/notes" exact />
 
           <PublicRoute restricted={false} component={NotFound}/>
  
