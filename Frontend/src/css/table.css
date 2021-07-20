@@ -2,14 +2,18 @@
 #tblData {
     border-collapse: collapse;
     width: 100%;
+    border: 1px solid rgb(207, 207, 207);
   }
+#tblData tr {
+  line-height: 40px;
+}
   
   #tblData td, #tblData th {
     border-bottom: 1px solid rgb(207, 207, 207);
     padding: 8px;
   }
   
-  #tblData tr:nth-child(even){background-color: var(--content-background) }
+  #tblData tr:nth-child(even){background-color: var(--content-background-light) }
   
   #tblData tr:hover {background-color: var(--content-background);}
   
@@ -17,6 +21,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: left;
+    background-color: var(--content-background);
  
   }
   .userstable {
