@@ -41,6 +41,7 @@ class Registerform extends Component {
               id='name'
               value={this.state.name}
               type='text'
+              required
             />
           </label>
           <br />
@@ -53,6 +54,7 @@ class Registerform extends Component {
               id='email'
               value={this.state.email}
               type='text'
+              required
             />
           </label>
           <br />
@@ -65,6 +67,7 @@ class Registerform extends Component {
               id='password'
               value={this.state.password}
               type='password'
+              required
             />
           </label>
           <br />
@@ -77,6 +80,7 @@ class Registerform extends Component {
               id='confirm_password'
               value={this.state.confirm_password}
               type='password'
+              required
             />
           </label>
           <br />
