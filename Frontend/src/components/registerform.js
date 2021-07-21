@@ -19,7 +19,16 @@ class Registerform extends Component {
     }
   }
 
+  handleShow = () =>{
+    this.setState({
+        isActive: true
+    })
+  }
+
   render() {
+
+    let errorMessage = this.state.errorMessage
+
     return (
       <div className='signupform'>
         <form onSubmit={this.handleSubmit.bind(this)} method='POST'>
@@ -72,6 +81,9 @@ class Registerform extends Component {
           </label>
           <br />
           <button className='LoginButton'>Signup</button>
+
+          {this.state.isActive ? <p className="errorTextLogin">{errorMessage}</p> : null}
+
         </form>
       </div>
     )
@@ -106,7 +118,7 @@ class Registerform extends Component {
       } else if (response.data.answer === 'password_too_short') {
         console.log('Password length must be at least 4 characters long')
         this.setState({
-          errorMessage: 'Password length must be at least 4 characters long',
+          errorMessage: 'Password length must be at least 4 characters long.',
         })
         this.setState({ regstatus: 'Submit' })
         this.handleShow()
