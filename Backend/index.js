@@ -11,12 +11,14 @@ app.use(cors());
 
 // Import Routes
 const authRoute = require('./routes/auth');
+const analyticRoute = require('./routes/analytic');
 
 // Middleware
 app.use(express.json());
 
 // Route Middlewares
 app.use('/api', authRoute);
+app.use('/api', analyticRoute);
 
 
 var HTTP_PORT = 5000
