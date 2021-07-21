@@ -71,11 +71,12 @@ renderTableHeader = () => {
 
 renderTableRows = () => {
     return this.state.users.map(user => {
+
       return (
         <tr key={user.id}>
           <td>{user.name}</td>
           <td>{user.email}</td>
-          <td className="delButton" onClick={() => this.deleteTableRow(user.id)}>&#10005;</td>
+          <td style={{cursor: "pointer"}} onClick={() => window.location.href = `mailto:${user.email}`}>&#9993; Contact </td>
         </tr>
       )
     })
