@@ -76,7 +76,7 @@ renderTableRows = () => {
         <tr key={user.id}>
           <td>{user.name}</td>
           <td>{user.email}</td>
-          <td style={{cursor: "pointer"}} onClick={() => window.location.href = `mailto:${user.email}`}>&#9993; Contact </td>
+          <td className="sendMail" onClick={() => window.location.href = `mailto:${user.email}`}>&#9993; Contact </td>
         </tr>
       )
     })

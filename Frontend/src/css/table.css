@@ -3,6 +3,7 @@
     border-collapse: collapse;
     width: 100%;
     border: 1px solid rgb(207, 207, 207);
+    color: var(--text-primary); 
   }
 #tblData tr {
   line-height: 40px;
@@ -22,10 +23,18 @@
     padding-bottom: 10px;
     text-align: left;
     background-color: var(--content-background);
+    color: var(--text-primary); ;
  
   }
   .userstable {
     background-color: white;
     padding: 10px;
     border-radius: 6px;
+  }
+  .sendMail {
+    cursor: pointer; 
+    width: 80px;
+  }
+  .sendMail:hover {
+    color: black;
   }

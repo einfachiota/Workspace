@@ -9,7 +9,7 @@
     float: right;
     margin-right: 25px;
     cursor: pointer;
-    color: rgb(87, 87, 87); 
+    color: var(--text-primary); 
 }
 .logoutbutton:hover {
     color: black;
@@ -21,7 +21,7 @@
     font-size: larger;
     font-weight: bolder;
     position: absolute;
-    color: rgb(87, 87, 87); 
+    color: var(--text-primary); ; 
 }
 .sidebarbutton:hover {
     color: black;
@@ -36,7 +36,7 @@
 .topNavigationItem {
     padding-right: 20px;
     text-decoration: none;
-    color: rgb(87, 87, 87);
+    color: var(--text-primary); ;
 }
 .topNavigationItem:hover {
     color: black;
