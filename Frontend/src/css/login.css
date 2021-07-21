@@ -20,7 +20,7 @@
     line-height: 50px;
     margin-left: 15px;
     font-weight: bold;
-    color: #777;
+    color: var(--text-primary);;
     text-decoration: none;
 }
 
@@ -100,8 +100,9 @@
 .navButtons a {
     border: none;
     margin-right: 15px;
-    color: #777;
+    color: var(--text-primary);
     text-decoration: none;
+    
 }
 .navButtons a:hover {
     background-color: #e7e7e7;
@@ -111,7 +112,6 @@
 }
 @media all and (min-width: 480px) {
   
-  
     .logo {
       height: 250px;
       width: 250px;
@@ -120,7 +120,29 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
+    } 
+  }
+
+  @media all and (max-width: 680px) {
+  
+    .NavBar {
+    width: 88vw;
+    min-width: 450px;
     }
+    .logo {
+      height: 150px;
+      width: 150px;
+    } 
     
   }
+
+  @media all and (max-height: 768px) {
+
+    .logo {
+      height: 150px;
+      width: 150px;
+    } 
+    
+  }
+
 
