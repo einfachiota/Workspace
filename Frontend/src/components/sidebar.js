@@ -34,7 +34,7 @@ function Navbar() {
                      <Link to={item.route}> 
 
                         <div key={item.name}>
-                            <div className="sidebarItem">{[item.icon, item.name]}</div>
+                                <div className="sidebarItem" onClick={() => window.location.href = `${item.link}`}>{[item.icon, item.name]}</div>
                         </div>
 
                      </Link>

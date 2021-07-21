@@ -1,5 +1,7 @@
 import { GithubIcon, AiOutlineDashboard, MeetIcon, TeamNoes } from "../assets/icons";
 
+const GITHUB_LINK = process.env.REACT_APP_GITHUB_LINK
+
 export const SidebarItemsMain = [
 
     {
@@ -22,7 +24,7 @@ export const SidebarItemsMain = [
 export const SidebarItemsResources = [
     {
         name: "GitHub",
-        href: '/github',
+        link: `${GITHUB_LINK}`,
         icon: <GithubIcon />
     },
 ]
