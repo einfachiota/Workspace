@@ -20,7 +20,16 @@ class Loginform extends Component {
         isActive: false
     };
 }
+
+handleShow = () =>{
+    this.setState({
+        isActive: true
+    })
+}
     render() {
+
+        let errorMessage = this.state.errorMessage
+
         return(
             <div className="loginform">
               <form onSubmit={this.handleSubmit.bind(this)} method="POST">
@@ -55,6 +64,8 @@ class Loginform extends Component {
                  <button className="LoginButton">
                     Login
                  </button>
+
+                 {this.state.isActive ? <p className="errorTextLogin">{errorMessage}</p> : null}
 
               </form>
             </div>
@@ -96,10 +107,10 @@ class Loginform extends Component {
 
         } else if (response.data.answer === "UserError") {
             this.setState({ password: "", status: "Logging in" });
-            this.setState({ errorMessage: "User not found!" });
+            this.setState({ errorMessage: "Email not found!" });
             this.setState({ status: "Submit" });
             this.handleShow()
-            console.log("User not found!");
+            console.log("Email not found!");
         
         } else if (response.data.answer === "PassError") {
             this.setState({ password: "", status: "Logging in" });
