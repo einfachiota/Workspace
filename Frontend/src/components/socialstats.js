@@ -17,7 +17,7 @@ class Socialstats extends Component {
 
     async componentDidMount() {
         this.setState({ isLoading: true })
-        const response = await fetch(`${API_ENDPOINT}/api/employees`)
+        const response = await fetch(`${API_ENDPOINT}/api/twitter`)
         if (response.ok) {
             const followers = await response.json()
             this.setState({ followers, isLoading: false })
@@ -41,7 +41,7 @@ class Socialstats extends Component {
             ? (
                 <div>  
 
-                    {this.renderTableRows()}
+                    {this.renderFollowers()}
     
                 </div>
             ) : (
@@ -52,11 +52,12 @@ class Socialstats extends Component {
     }
 
 
-    renderTableRows = () => {
-
+    renderFollowers = () => {
+        return this.state.followers.map(follower => {
             return (
                 <div>Stats</div>
             )
+        })
     }
 
 }
