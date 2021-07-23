@@ -2,7 +2,7 @@ import React from 'react'
 import Socialstats from '../components/socialstats'
 
 
-function Entry(props) {
+function Entry() {
 
     return (
       <div>
