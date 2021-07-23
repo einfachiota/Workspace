@@ -12,35 +12,39 @@ class Socialstats extends Component {
             discordusers: [],
             telegramusers: [],
             isLoading: false,
-            isError: false
+            isLoadingTwitter: false,
+            isLoadingDiscord: false,
+            isError: false,
+            isErrorTwitter: false,
+            isErrorDiscord: false,
         }
     }
 
 
-    async componentDidMount() {
+    componentDidMount() {
         this.FetchTwitter()
         this.FetchDiscord()
         this.FetchTelegram()
     }
 
     async FetchTwitter() {
-        this.setState({ isLoading: true })
-        const response = await fetch(`${API_ENDPOINT}/api/twitter`)
-        if (response.ok) {
-            const followers = await response.json()
-            this.setState({ followers, isLoading: false })
+        this.setState({ isLoadingTwitter: true })
+        const responseTwitter = await fetch(`${API_ENDPOINT}/api/twitter`)
+        if (responseTwitter.ok) {
+            const followers = await responseTwitter.json()
+            this.setState({ followers, isLoadingTwitter: false })
         } else {
-            this.setState({ isError: true, isLoading: false })
+            this.setState({ isErrorTwitter: true, isLoadingTwitter: false })
         }
     }
     async FetchDiscord() {
-        this.setState({ isLoading: true })
-        const response = await fetch(`${API_ENDPOINT}/api/discord`)
-        if (response.ok) {
-            const discordusers = await response.json()
-            this.setState({ discordusers, isLoading: false })
+        this.setState({ isLoadingDiscord: true })
+        const responseDiscord = await fetch(`${API_ENDPOINT}/api/discord`)
+        if (responseDiscord.ok) {
+            const discordusers = await responseDiscord.json()
+            this.setState({ discordusers, isLoadingDiscord: false })
         } else {
-            this.setState({ isError: true, isLoading: false })
+            this.setState({ isErrorDiscord: true, isLoadingDiscord: false })
         }
     }
 
@@ -67,15 +71,16 @@ class Socialstats extends Component {
 
 
     renderTwitterFollowers = () => {
+        const { followers, isLoadingTwitter, isErrorTwitter } = this.state
+
         return this.state.followers.map(follower => {
-            const { followers, isLoading, isError } = this.state
 
 
-            if (isLoading) {
+            if (isLoadingTwitter) {
                 return <div>Loading...</div>
             }
     
-            if (isError) {
+            if (isErrorTwitter) {
                 return <div>Error</div>
             }
     
@@ -95,16 +100,16 @@ class Socialstats extends Component {
         
     }
     renderDiscordUsers = () => {
+        const { discordusers, isLoadingDiscord, isErrorDiscord } = this.state
+
         return this.state.discordusers.map(discorduser => {
 
-            const { discordusers, isLoading, isError } = this.state
 
-
-            if (isLoading) {
+            if (isLoadingDiscord) {
                 return <div>Loading...</div>
             }
     
-            if (isError) {
+            if (isErrorDiscord) {
                 return <div>Error</div>
             }
     
@@ -125,9 +130,9 @@ class Socialstats extends Component {
     }
 
     renderTelegramFollowers = () => {
-        return this.state.telegramusers.map(telegramuser => {
+        const { telegramusers, isLoading, isError } = this.state
 
-            const { telegramusers, isLoading, isError } = this.state
+        return this.state.telegramusers.map(telegramuser => {
 
 
             if (isLoading) {
@@ -142,7 +147,7 @@ class Socialstats extends Component {
                 ? (
                   <div>
                   <h3 style={{paddingLeft: "15px", color: "black"}}>Telegram:</h3>
-                    {telegramusers} user
+                    {telegramuser} user
                   </div>
 
                 ) : (
