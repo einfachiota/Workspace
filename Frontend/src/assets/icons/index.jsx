@@ -167,4 +167,30 @@ export const TeamNoes = ({ color, size, title, className }) => {
     );
 };
 
+export const MediaIcon = ({ color, size, title, className }) => {
+    return (
+        <svg
+            stroke="currentColor"
+            fill="currentColor"
+            strokeWidth="0"
+            viewBox="0 2 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            height={size ? size : "16px"}
+            width={size ? size : "19px"}
+            style={{ color }}
+            className={className ? className : 'ListIcon'}
+        >
+            { title ? <title>{title}</title> : null}
+            <path
+                stroke="currentColor"
+                strokeWidth="0"
+                d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"
+            ></path>
+            <path
+                stroke="currentColor"
+                strokeWidth="0"
+                d="M2 6H0v5h.01L0 20c0 1.1.9 2 2 2h18v-2H2V6zm20-2h-8l-2-2H6c-1.1 0-1.99.9-1.99 2L4 16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7 15l4.5-6 3.5 4.51 2.5-3.01L21 15H7z"            ></path>
+        </svg>
+    );
+};
 
