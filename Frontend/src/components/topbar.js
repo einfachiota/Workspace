@@ -50,7 +50,6 @@ toggleNav = () => {
                 <div className="topNavigation">
                    <li>
                     <Link to='/members' className="topNavigationItem">Team</Link>
-                    <Link to='/login' className="topNavigationItem">Login</Link>
                   </li>
                 </div>
 

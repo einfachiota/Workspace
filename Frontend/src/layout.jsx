@@ -1,7 +1,7 @@
-import React from 'react';
-import Routes from "./routes";
+import React from 'react'
+import Routes from './routes'
 import Sidebar from './components/sidebar'
-import Topbar from './components/topbar';
+import Topbar from './components/topbar'
 
 function Layout(props) {
     return (
@@ -10,7 +10,6 @@ function Layout(props) {
                 <Sidebar/>
                 <Topbar />
                 <Routes />
-               
             </div>
     
     );
