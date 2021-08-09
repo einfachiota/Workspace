@@ -40,16 +40,20 @@ function setupPassport() {
   ));
   
   passport.serializeUser((user, done) => {
+    console.log("searching user: " + JSON.stringify(user))
     done(null, user.email);
   });
 
-  passport.deserializeUser((username, done) => {
-    db.get(`SELECT * FROM Employees WHERE name = ?`,[username], (err, user) => {
-      console.log(user)
+  passport.deserializeUser((userRes, done) => {
+    db.get(`SELECT * FROM Employees WHERE email = ?`,[userRes], (err, user) => {
+      console.log("Deserializing user now" + userRes)
       if (user)
-        done(err, user)
+        done(null, user)
       else
+      {
+        console.log("ERROR!")
         done(err, null);
+      }
     });
   });
 }
@@ -61,7 +65,10 @@ function setupPassport() {
 function setupExpress() {
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
-  app.use(cors());
+  app.use(cors({ 
+    credentials: true, 
+    origin: process.env.CORS_ORIGIN || 'http://localhost:3000' 
+  }));
   app.use(express.json());
   const sessionSecret = crypto.randomBytes(16).toString('hex');
   app.use(
@@ -69,6 +76,7 @@ function setupExpress() {
       secret: sessionSecret,
       saveUninitialized: true,
       resave: false,
+      cookie: { secure: false }
     }),
   );
 
@@ -79,7 +87,7 @@ function setupExpress() {
 
   // Route Middlewares
   app.use('/api', authRoute);
-  app.use('/api',checkAuthentication, analyticRoute);
+  app.use('/api', analyticRoute);
   app.use('/api',checkAuthentication, meetingRoute);
 
 

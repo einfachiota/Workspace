@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from "axios"
 
 import '../css/dashboard.css'
 
@@ -28,8 +29,20 @@ class Socialstats extends Component {
     }
 
     async FetchTwitter() {
+        
+        axios({
+            method: "GET",
+            withCredentials: true,
+            url: `${API_ENDPOINT}/api/meetingNotes`,
+            headers: { 'Content-Type': 'application/json' },
+            
+        }).then((response, props) => {
+            console.log(response)
+        });
         this.setState({ isLoadingTwitter: true })
-        const responseTwitter = await fetch(`${API_ENDPOINT}/api/twitter`)
+        const responseTwitter = await fetch(`${API_ENDPOINT}/api/twitter`, {
+            credentials: 'include'
+        })
         if (responseTwitter.ok) {
             const followers = await responseTwitter.json()
             this.setState({ followers, isLoadingTwitter: false })
@@ -39,7 +52,9 @@ class Socialstats extends Component {
     }
     async FetchDiscord() {
         this.setState({ isLoadingDiscord: true })
-        const responseDiscord = await fetch(`${API_ENDPOINT}/api/discord`)
+        const responseDiscord = await fetch(`${API_ENDPOINT}/api/discord`, {
+            credentials: 'include'
+        })
         if (responseDiscord.ok) {
             const discordusers = await responseDiscord.json()
             this.setState({ discordusers, isLoadingDiscord: false })
@@ -50,7 +65,9 @@ class Socialstats extends Component {
 
     async FetchTelegram() {
         this.setState({ isLoading: true })
-        const response = await fetch(`${API_ENDPOINT}/api/telegram`)
+        const response = await fetch(`${API_ENDPOINT}/api/telegram`, {
+            credentials: 'include'
+        })
         if (response.ok) {
             const telegramusers = await response.json()
             this.setState({ telegramusers, isLoading: false })

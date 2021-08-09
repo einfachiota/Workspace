@@ -1,9 +1,9 @@
 
 const checkAuthentication = function checkAuthentication(req, res, next) {
 	if (req.isAuthenticated()) {
-	  next();
+		next();
 	} else
-	  res.status(401).send({ Error: 'attempted unauthorized access' });
+		res.status(401).send({ error: 'Invalid permission' });
 }
 
 module.exports = checkAuthentication
