@@ -7,12 +7,6 @@ import { showMd, hideMd } from '../components/handler'
 
 import '../css/meetings.css'
 
-const Title = styled.div`
-  font-size: 25px;
-  font-weight: 700;
-  font-family: "Lato", sans-serif;
-  margin-bottom: 1em;
-`;
 
 const EditorContainer = styled.div`
   width: 100%;
