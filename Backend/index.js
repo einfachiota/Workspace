@@ -9,8 +9,12 @@ const LocalStrategy = require('passport-local').Strategy;
 const authRoute = require('./routes/auth');
 const analyticRoute = require('./routes/analytic');
 const meetingRoute = require('./routes/meetings')
+const checkAuthentication = require("./auth/is_authenticated")
 const db = require('./Database');
 const argon2 = require("argon2")
+const session = require('express-session')
+
+const crypto = require("crypto")
 require('dotenv').config()
 
 /**
@@ -60,14 +64,24 @@ function setupExpress() {
   app.use(bodyParser.json());
   app.use(cors());
   app.use(express.json());
+  const sessionSecret = crypto.randomBytes(16).toString('hex');
+  app.use(
+    session({
+      secret: sessionSecret,
+      saveUninitialized: true,
+      resave: false,
+    }),
+  );
+
+
   app.use(passport.initialize());
   app.use(passport.session());  
   setupPassport()
 
   // Route Middlewares
   app.use('/api', authRoute);
-  app.use('/api', analyticRoute);
-  app.use('/api', meetingRoute);
+  app.use('/api',checkAuthentication, analyticRoute);
+  app.use('/api',checkAuthentication, meetingRoute);
 
 
   var HTTP_PORT = 5000
