@@ -4,9 +4,8 @@ import editorContext from '../../editorContext.js'
 
 const Container = styled.div`
   width: 50%;
-  height: 70%;
+  height: 80%;
   padding: 13px;
-  border-right: 1.5px solid rgba(15, 15, 15, 0.4);
   font-family: "Lato", sans-serif;
 `;
 
@@ -15,7 +14,6 @@ const Title = styled.div`
   font-weight: 600;
   margin-bottom: 1em;
   padding: 8px 0;
-  border-bottom: 1px solid rgba(15, 15, 15, 0.3);
 `;
 
 const TextArea = styled.textarea`

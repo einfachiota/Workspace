@@ -43,13 +43,13 @@ export default function Meetings() {
        
               <br />
               <br />
-              <Title>Meeting Notes</Title>
               <EditorContainer>
                 <MarkedInput />
                 <Result />
               </EditorContainer>
         
           </EditorContext.Provider>
+          <button className="submitNotesButton">Send</button>
         </div>
         </div>
  
