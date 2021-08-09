@@ -25,9 +25,8 @@ function setupPassport() {
   passport.use(new LocalStrategy(
     async function(username, password, done) {
       db.get(`SELECT * FROM Employees WHERE email = ?`,[username], async (err, user) => {
-        if (password)
+        if (password && user && username && password)
         {
-          console.log("testfor " + password)
           const res = await argon2.verify(user.password, password + process.env.SALT)
           if (res)
             done(err, user)
@@ -44,8 +43,8 @@ function setupPassport() {
     done(null, user.email);
   });
 
-  passport.deserializeUser((id, done) => {
-    db.get(`SELECT * FROM Employees WHERE email = ?`,[username], (err, user) => {
+  passport.deserializeUser((username, done) => {
+    db.get(`SELECT * FROM Employees WHERE name = ?`,[username], (err, user) => {
       console.log(user)
       if (user)
         done(err, user)
