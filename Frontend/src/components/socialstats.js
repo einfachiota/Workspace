@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
+import axios from "axios"
 
 import '../css/dashboard.css'
+
+import isLogin from '../utils/index'
+import { any } from '@hapi/joi'
 
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT
 
@@ -25,11 +29,34 @@ class Socialstats extends Component {
         this.FetchTwitter()
         this.FetchDiscord()
         this.FetchTelegram()
+        
+        this.getIsLogin()
+    }
+    
+    /**
+     * Get user cookie
+     */
+    getIsLogin() {
+        console.log("LOGIN: " + isLogin())
+        return isLogin();
     }
 
     async FetchTwitter() {
+        
+        axios({
+            method: "GET",
+            withCredentials: true,
+            credentials: 'include',
+            url: `${API_ENDPOINT}/api/meetingNotes`,
+            headers: { 'Content-Type': 'application/json' },
+            
+        }).then((response, props) => {
+            console.log(response)
+        });
         this.setState({ isLoadingTwitter: true })
-        const responseTwitter = await fetch(`${API_ENDPOINT}/api/twitter`)
+        const responseTwitter = await fetch(`${API_ENDPOINT}/api/twitter`, {
+            credentials: 'include'
+        })
         if (responseTwitter.ok) {
             const followers = await responseTwitter.json()
             this.setState({ followers, isLoadingTwitter: false })
@@ -39,7 +66,9 @@ class Socialstats extends Component {
     }
     async FetchDiscord() {
         this.setState({ isLoadingDiscord: true })
-        const responseDiscord = await fetch(`${API_ENDPOINT}/api/discord`)
+        const responseDiscord = await fetch(`${API_ENDPOINT}/api/discord`, {
+            credentials: 'include'
+        })
         if (responseDiscord.ok) {
             const discordusers = await responseDiscord.json()
             this.setState({ discordusers, isLoadingDiscord: false })
@@ -50,7 +79,9 @@ class Socialstats extends Component {
 
     async FetchTelegram() {
         this.setState({ isLoading: true })
-        const response = await fetch(`${API_ENDPOINT}/api/telegram`)
+        const response = await fetch(`${API_ENDPOINT}/api/telegram`, {
+            credentials: 'include'
+        })
         if (response.ok) {
             const telegramusers = await response.json()
             this.setState({ telegramusers, isLoading: false })

@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const checkAuthentication = require("../auth/is_authenticated")
 
 require('dotenv').config()
 
@@ -8,7 +9,7 @@ router.get('/ping', function (req, res) {
     return res.send('pong');
 });
 
-router.get('/twitter', function (req, res) {
+router.get('/twitter', checkAuthentication, function (req, res) {
     var data = {
         followers: 50,
     }
@@ -16,14 +17,14 @@ router.get('/twitter', function (req, res) {
     return res.status(200).json(data);
 });
 
-router.get('/discord', function (req, res) {
+router.get('/discord', checkAuthentication, function (req, res) {
     var data = {
         discordusers: 520,
     }
     var data =[data.discordusers]
     return res.status(200).json(data);
 });
-router.get('/telegram', function (req, res) {
+router.get('/telegram', checkAuthentication, function (req, res) {
     var data = {
         telegramusers: 100,
     }
