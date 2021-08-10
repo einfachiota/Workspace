@@ -14,8 +14,7 @@ export function closeNav() {
 export function showMd() {
     document.getElementById("mdEditor").style.display = "var(--display-true)";
     document.getElementById("markdownPress").style.display = "none";
-    document.getElementById("back").style.display = "flex";
-}
+    document.getElementById("back").style.display = "flex";}
 
 export function hideMd() {
     document.getElementById("mdEditor").style.display = "none";
