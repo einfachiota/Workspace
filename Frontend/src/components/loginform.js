@@ -81,8 +81,9 @@ handleShow = () =>{
       }
   }
 
-  handleLogin = () => {
-      login();
+  handleLogin = (any) => {
+      console.log("Saving object: " + JSON.stringify(any))
+      login(any);
       this.props.history.push('/')
   }
 
@@ -92,6 +93,7 @@ handleShow = () =>{
 
     axios({
         method: "POST",
+        withCredentials: true,
         credentials: 'include',
         url: `${API_ENDPOINT}/api/login`,
         headers: { 'Content-Type': 'application/json' },
@@ -102,7 +104,7 @@ handleShow = () =>{
         if (response.data.success) {
             alert("LOGIN OK")
             this.setState({ email: "", password: "", status: "Logged in" })
-            this.handleLogin()
+            this.handleLogin(response)
             console.log("Login Success");
         } else if (response.data.answer === "UserError") {
             this.setState({ password: "", status: "Logging in" });

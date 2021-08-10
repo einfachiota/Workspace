@@ -3,6 +3,9 @@ import axios from "axios"
 
 import '../css/dashboard.css'
 
+import isLogin from '../utils/index'
+import { any } from '@hapi/joi'
+
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT
 
 class Socialstats extends Component {
@@ -26,6 +29,16 @@ class Socialstats extends Component {
         this.FetchTwitter()
         this.FetchDiscord()
         this.FetchTelegram()
+        
+        this.getIsLogin()
+    }
+    
+    /**
+     * Get user cookie
+     */
+    getIsLogin() {
+        console.log("LOGIN: " + isLogin())
+        return isLogin();
     }
 
     async FetchTwitter() {
@@ -33,6 +46,7 @@ class Socialstats extends Component {
         axios({
             method: "GET",
             withCredentials: true,
+            credentials: 'include',
             url: `${API_ENDPOINT}/api/meetingNotes`,
             headers: { 'Content-Type': 'application/json' },
             
