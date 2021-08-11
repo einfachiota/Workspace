@@ -114,7 +114,7 @@ function configure_first_start()
     if (is_first_start)
     {
       if (ADMINMAIL && ADMIN_PW)
-        register_user("admin", "admin@example.com", "12345")
+        register_user("admin", ADMINMAIL, ADMIN_PW)
       else
         console.log("Please configure admin user in env file accordingly to the example.")
     }
