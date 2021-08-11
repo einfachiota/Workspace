@@ -1,9 +1,7 @@
 var sqlite3 = require('sqlite3').verbose()
 const bcrypt = require('bcryptjs')
-const register_user = require("./database/register_user")
 
 const DBSOURCE = "db.sqlite"
-require('dotenv').config()
 
 let db = new sqlite3.Database(DBSOURCE, (err) => {
     if (err) {
@@ -24,16 +22,11 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
                 if (err) {
                     // Table already created
                 } else {
-                    // First start. Create initial admin user now!
-                    if (process.env.INITIAL_ADMIN_PASSWORD && process.env.ADMIN_EMAIL)
-                    {
-                        register_user("admin", process.env.ADMIN_EMAIL, process.env.INITIAL_ADMIN_PASSWORD )
-                        console.log("Created inital user!")
-                    }
-                    else
-                        console.log("[ERROR] Failed to create initial admin user!")
-            }
-            });
+                    console.log("First start!")
+                }
+            })
+    }
+});
 
 
 
