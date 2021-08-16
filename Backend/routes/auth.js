@@ -59,8 +59,16 @@ router.get("/employees", (req, res, next) => {
 /**
  * Login route
  */
-router.post('/login', passport.authenticate('local'), (req, res) => {
-  res.send({success: true})
+
+router.post('/login', function(req, res, next) {
+  passport.authenticate('local', function(err, user, info) {
+    if (err) { return next(err); }
+    if (!user) { return res.json({"answer":"UserError"}) }
+    req.logIn(user, function(err) {
+      if (err) { return next(err); }
+      return res.send({success: true});
+    });
+  })(req, res, next);
 });
 
 router.delete("/api/employee/:id", (req, res, next) => {
