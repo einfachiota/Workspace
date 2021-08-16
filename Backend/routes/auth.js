@@ -17,10 +17,6 @@ router.post('/register', async (req, res) => {
     email: Joi.string().min(4).required().email(),
     password: Joi.string().min(4).required(),
   }
-  
-  // Hashing
-  const salt = await bcrypt.genSalt(10)
-  const hashedPassword = await bcrypt.hash(req.body.password, salt)
 
   // Validate
   const {error} = Joi.validate(req.body, schema)
