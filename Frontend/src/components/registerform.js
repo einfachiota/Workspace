@@ -132,7 +132,17 @@ class Registerform extends Component {
       } else if (response.data.answer === 'Email_Excist') {
         console.log('There is already an account with this email')
         this.handleShow()
-      }
+      } else if (response.data.answer === 'successfully_registered') {
+      this.setState({
+        name: '',
+        password: '',
+        confirm_password: '',
+        email: '',
+        errorMessage: 'successfully registered!',
+      })
+      console.log('successfully registered!')
+      this.handleShow()
+    }
     })
   }
 

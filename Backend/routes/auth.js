@@ -20,13 +20,12 @@ router.post('/register', async (req, res) => {
 
   // Validate
   const {error} = Joi.validate(req.body, schema)
-  const result = await register_user(req.body.name, req.body.email, req.body.password, res)
   if (error){
     res.json({ "answer": "password_too_short"});
     res.status(400)
-    return;
   } else {
-  res.send({success: result})
+  const result = await register_user(req.body.name, req.body.email, req.body.password, res)
+  res.json({success: result, "answer": "successfully_registered"})
   }
 })
 
