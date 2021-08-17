@@ -102,13 +102,12 @@ handleShow = () =>{
     }).then((response, props) => {
         console.log(response)
         if (response.data.success) {
-            alert("LOGIN OK")
             this.setState({ email: "", password: "", status: "Logged in" })
             this.handleLogin(response)
             console.log("Login Success");
         } else if (response.data.answer === "UserError") {
             this.setState({ password: "", status: "Logging in" });
-            this.setState({ errorMessage: "Email not found!" });
+            this.setState({ errorMessage: "Wrong email or password!" });
             this.setState({ status: "Submit" });
             this.handleShow()
             console.log("Email not found!");
