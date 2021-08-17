@@ -30,11 +30,11 @@ render() {
     const { users, isLoading, isError } = this.state
 
     if (isLoading) {
-      return <div>Loading...</div>
+      return <div id="contentpage">Loading...</div>
     }
 
     if (isError) {
-      return <div>Error</div>
+      return <div id="contentpage">Error</div>
     }
 
     return users.length > 0

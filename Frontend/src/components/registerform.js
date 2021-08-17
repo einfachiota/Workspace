@@ -15,19 +15,29 @@ class Registerform extends Component {
       confirm_password: '',
       status: 'Submit',
       errorMessage: '',
+      successMessage: '',
       isActive: false,
+      isActiveSuccess: false
     }
   }
 
-  handleShow = () =>{
+handleShow = () =>{
     this.setState({
-        isActive: true
+        isActive: true,
+        isActiveSuccess: false
     })
-  }
+}
+handleShowSuccess = () =>{
+    this.setState({
+        isActive: false,
+        isActiveSuccess: true
+    })
+}
 
   render() {
 
     let errorMessage = this.state.errorMessage
+    let successMessage = this.state.successMessage
 
     return (
       <div className='signupform'>
@@ -87,7 +97,7 @@ class Registerform extends Component {
           <button className='LoginButton'>Signup</button>
 
           {this.state.isActive ? <p className="errorTextLogin">{errorMessage}</p> : null}
-
+          {this.state.isActiveSuccess ? <p className="successTextLogin">{successMessage}</p> : null}
         </form>
       </div>
     )
@@ -138,10 +148,10 @@ class Registerform extends Component {
         password: '',
         confirm_password: '',
         email: '',
-        errorMessage: 'successfully registered!',
+        successMessage: 'successfully registered!',
       })
       console.log('successfully registered!')
-      this.handleShow()
+      this.handleShowSuccess()
     }
     })
   }

@@ -90,6 +90,16 @@
     width: 318px;
 }
 
+.successTextLogin {
+    border: 1px solid rgb(52, 124, 3);
+    color: rgb(52, 124, 3);
+    padding: 10px 16px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    width: 318px;
+}
 .navButtons {
     text-align: right;
     list-style: none;
