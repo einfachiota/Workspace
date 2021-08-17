@@ -5,6 +5,7 @@ const register_user = require("../database/register_user")
 const bcrypt = require('bcryptjs')
 const nodemailer = require("nodemailer")
 const passport = require('passport')
+const checkAuthentication = require("../auth/is_authenticated")
 
 require('dotenv').config()
 
@@ -29,7 +30,10 @@ router.post('/register', async (req, res) => {
   }
 })
 
-router.get("/employees", (req, res, next) => {
+/**
+ * Get all employees
+ */
+router.get("/employees", checkAuthentication, (req, res, next) => {
     var sql = "select * from Employees"
     var params = []
     db.all(sql, params, (err, rows) => {
@@ -41,7 +45,10 @@ router.get("/employees", (req, res, next) => {
     });
   });
   
-  router.get("/employees/:id", (req, res, next) => {
+/**
+ * Get employee by id
+ */
+router.get("/employees/:id",checkAuthentication, (req, res, next) => {
     var sql = "select * from Employees where id = ?"
     var params = [req.params.id]
     db.get(sql, params, (err, row) => {
@@ -71,7 +78,10 @@ router.post('/login', function(req, res, next) {
   })(req, res, next);
 });
 
-router.delete("/api/employee/:id", (req, res, next) => {
+/**
+ * delete employee by id
+ */
+router.delete("/api/employee/:id", checkAuthentication, (req, res, next) => {
   db.run(
       'DELETE FROM Employees WHERE id = ?',
       req.params.id,
