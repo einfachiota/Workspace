@@ -1,5 +1,6 @@
 .socialStatsContainer {
     background-color: white;
+    border: var(--border);
     padding: 10px;
     border-radius: 6px;
     flex-direction: row;

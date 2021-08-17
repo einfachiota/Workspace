@@ -33,4 +33,13 @@ export const SidebarItemsResources = [
         icon: <MediaIcon />
     },
 ]
+
+export const SidebarItemsEimag = [
+    {
+        name: "Korrektur",
+        link: `${GITHUB_LINK}`,
+        icon: <GithubIcon />
+    },
+]
+
 export default SidebarItemsMain;

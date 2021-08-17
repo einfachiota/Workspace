@@ -30,6 +30,7 @@
     background-color: white;
     padding: 10px;
     border-radius: 6px;
+    border: var(--border);
   }
   .sendMail {
     cursor: pointer; 
