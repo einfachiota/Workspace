@@ -17,7 +17,7 @@ class Coworker extends Component {
 
 async componentDidMount() {
     this.setState({ isLoading: true })
-    const response = await fetch(`${API_ENDPOINT}/api/employees`)
+    const response = await fetch(`${API_ENDPOINT}/api/employees`, {credentials: 'include'})
     if (response.ok) {
       const users = await response.json()
       this.setState({ users, isLoading: false })
