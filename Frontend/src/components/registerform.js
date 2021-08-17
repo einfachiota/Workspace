@@ -29,8 +29,8 @@ handleShow = () =>{
 }
 handleShowSuccess = () =>{
     this.setState({
+        isActiveSuccess: true,
         isActive: false,
-        isActiveSuccess: true
     })
 }
 
@@ -106,7 +106,10 @@ handleShowSuccess = () =>{
     event.preventDefault()
     if (this.state.password !== this.state.confirm_password) {
       console.log("The passwords doesn't match")
-      this.setState({ errorMessage: "The passwords doesn't match" })
+      this.setState({ 
+        errorMessage: "The passwords doesn't match"
+      })
+      this.handleShow()
       return false // The form won't submit
     } else this.setState({ status: 'Submitting' })
 
@@ -134,7 +137,6 @@ handleShowSuccess = () =>{
         this.setState({
           errorMessage: 'Password length must be at least 4 characters long.',
         })
-        this.setState({ regstatus: 'Submit' })
         this.handleShow()
       } else if (response.data.answer === 'Name_Excist') {
         console.log('Username already exist')
@@ -149,6 +151,7 @@ handleShowSuccess = () =>{
         confirm_password: '',
         email: '',
         successMessage: 'successfully registered!',
+        isActive: false,
       })
       console.log('successfully registered!')
       this.handleShowSuccess()
@@ -173,11 +176,6 @@ handleShowSuccess = () =>{
       console.log('error')
       this.setState({ regconfirm_password: event.target.value })
     }
-  }
-  handleShow = () => {
-    this.setState({
-      isActive: true,
-    })
   }
 }
 
