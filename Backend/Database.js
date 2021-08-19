@@ -22,7 +22,19 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
                 if (err) {
                     // Table already created
                 } else {
-                    console.log("First start!")
+                    console.log("First start, Create Members Table!")
+                }
+            })
+
+        db.run(`CREATE TABLE Meetingnotes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            meetingnote text UNIQUE
+            )`,
+            (err) => {
+                if (err) {
+                    // Table already created
+                } else {
+                    console.log("First start, Create Meetingnotes Table!")
                 }
             })
     }
